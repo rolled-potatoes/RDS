@@ -1,0 +1,16 @@
+@mixin root-color($key,$colors){
+  @each $name, $color in $colors {
+    --#{$key}-#{$name} : $color;
+  }
+};
+
+:root{
+  @each $name, $value in $breakpoints  {
+    --bk-#{$name} : #{$value};
+  };
+  @include root-color('gray', $gray);
+  @include root-color('red', $red);
+  @include root-color('yellow', $yellow);
+  @include root-color('green', $green);
+  @include root-color('blue', $blue);
+}
