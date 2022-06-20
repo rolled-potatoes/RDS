@@ -1,7 +1,7 @@
-$white : #fff;
-$black : #000; 
+$white: #fff;
+$black: #000;
 
-$gray:(
+$gray: (
   '0': '#f8f9fa',
   '1': '#f1f3f5',
   '2': '#e9ecef',
@@ -14,7 +14,7 @@ $gray:(
   '9': '#212529',
 );
 
-$red:(
+$red: (
   '0': '#fff5f5',
   '1': '#ffe3e3',
   '2': '#ffc9c9',
@@ -27,7 +27,7 @@ $red:(
   '9': '#c92a2a',
 );
 
-$blue :(
+$blue: (
   '0': '#e7f5ff',
   '1': '#d0ebff',
   '2': '#a5d8ff',
@@ -41,7 +41,7 @@ $blue :(
 );
 
 $green: (
-'0': '#ebfbee',
+  '0': '#ebfbee',
   '1': '#d3f9d8',
   '2': '#b2f2bb',
   '3': '#8ce99a',
@@ -53,7 +53,7 @@ $green: (
   '9': '#2b8a3e',
 );
 
-$yellow : (
+$yellow: (
   '0': '#fff9db',
   '1': '#fff3bf',
   '2': '#ffec99',
@@ -66,20 +66,34 @@ $yellow : (
   '9': '#e67700',
 );
 
-@mixin color($colors,$key) {
+@mixin color($colors, $key) {
   @each $name, $color in $colors {
     .text-#{$key}-#{$name} {
-      color : $color;
+      color: var(--#{$key}-#{$name});
     }
-
-    .bg-#{$key}-#{$name}{
-      background-color : $color;
+    .bg-#{$key}-#{$name} {
+      background-color: var(--#{$key}-#{$name});
     }
   }
 }
 
-@include color($gray,'gray');
-@include color($yellow,'yellow');
-@include color($red,'red');
-@include color($blue,'blue');
-@include color($green,'green');
+@include color($gray, 'gray');
+@include color($yellow, 'yellow');
+@include color($red, 'red');
+@include color($blue, 'blue');
+@include color($green, 'green');
+.text-white {
+  color: var(--white);
+}
+
+.bg-white {
+  background-color: var(--white);
+}
+
+.text-black {
+  color: var(--black);
+}
+
+.bg-black {
+  background-color: var(--black);
+}
