@@ -4,7 +4,7 @@
   "description": "rolled-potatoes design system",
   "main": "index.js",
   "scripts": {
-    "build":  "npx sass ./src/index.scss dist/bundle.css --style compressed",
+    "build": "npx sass ./src/index.scss dist/bundle.css --style compressed",
     "prefix": "postcss dist/bundle.css --use=autoprefixer --output=dist/bundle.css",
     "build:all": "npm run build && npm run prefix"
   },
@@ -23,5 +23,8 @@
     "autoprefixer": "^10.4.7",
     "postcss-cli": "^9.1.0",
     "sass": "^1.52.2"
+  },
+  "devDependencies": {
+    "prettier": "^2.7.1"
   }
 }
